@@ -1,18 +1,21 @@
 <div class="row">
   <div class="col-xs-12 col-sm-4">
     <div class="list-group">
-      <a
-        href="#"
-        class="list-group-item"
-        *ngFor="let server of servers">
+      <a href="#" class="list-group-item" *ngFor="let server of servers">
         {{ server.name }}
       </a>
     </div>
   </div>
   <div class="col-xs-12 col-sm-4">
+    <!-- 
+      Añadir ruta absoluta  (navega a localhost:4200 servers) 
+      no ha ruta relativa (intenta ir a /serversServers)
+    -->
+    <a routerLink="/servers">Refresh</a>
+    <br />
+    <a routerLink="/users">Go to Users</a>
     <app-edit-server></app-edit-server>
-    <hr>
+    <hr />
     <app-server></app-server>
   </div>
 </div>
-
