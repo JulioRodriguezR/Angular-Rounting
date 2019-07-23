@@ -7,11 +7,11 @@
     </div>
   </div>
   <div class="col-xs-12 col-sm-4">
-    <!-- 
-      Añadir ruta absoluta  (navega a localhost:4200 servers) 
+    <!--
+      Añadir ruta absoluta  (navega a localhost:4200 servers)
       no ha ruta relativa (intenta ir a /serversServers)
     -->
-    <a routerLink="/servers">Refresh</a>
+    <button class="btn btn-primary" (click)="onRefresh()">Refresh</button>
     <br />
     <a routerLink="/users">Go to Users</a>
     <app-edit-server></app-edit-server>

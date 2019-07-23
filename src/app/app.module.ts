@@ -15,6 +15,7 @@ import { ServersService } from './servers/servers.service';
 const appRoutes: Routes = [
   { path: '', component: HomeComponent }, // localhost:...
   { path: 'users', component: UserComponent }, // localhost:.../users
+  { path: 'users/:id/:name', component: UserComponent }, // Cargar dinámicamente una ruta
   { path: 'servers', component: ServersComponent }
 ]
 @NgModule({

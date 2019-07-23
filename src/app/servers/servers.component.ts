@@ -1,4 +1,6 @@
+import { Router, ActivatedRoute } from '@angular/router';
 import { Component, OnInit } from '@angular/core';
+
 import { ServersService } from './servers.service';
 
 @Component({
@@ -9,10 +11,19 @@ import { ServersService } from './servers.service';
 export class ServersComponent implements OnInit {
   servers: {id: number, name: string, status: string}[] = [];
 
-  constructor(private serversService: ServersService) { }
+  constructor(private serversService: ServersService,
+              private router: Router,
+              // Inyectar la rutas actualmente activas
+              private route: ActivatedRoute) {
+  }
 
   ngOnInit() {
     this.servers = this.serversService.getServers();
   }
 
+  onRefresh() {
+    //this.router.navigate(['/servers'], {relativeTo: this.route});
+    // Indiferentemente como ruta absoluta o relativa.
+    // A diferencia de routerLink navigate no sabe en que ruta se encuentra actualmente
+  }
 }
