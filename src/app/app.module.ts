@@ -16,7 +16,8 @@ const appRoutes: Routes = [
   { path: '', component: HomeComponent }, // localhost:...
   { path: 'users', component: UserComponent }, // localhost:.../users
   { path: 'users/:id/:name', component: UserComponent }, // Cargar dinámicamente una ruta
-  { path: 'servers', component: ServersComponent }
+  { path: 'servers', component: ServersComponent },
+  { path: 'servers/:id/edit', component: EditServerComponent } // Editar un servidor
 ]
 @NgModule({
   declarations: [
