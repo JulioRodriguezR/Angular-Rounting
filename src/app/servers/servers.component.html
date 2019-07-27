@@ -7,12 +7,13 @@
       -->
       <a
         [routerLink]="['/servers', 5, 'edit']"
-        [queryParams]="{allowEdit: '1'}"
+        [queryParams]="{ allowEdit: '1' }"
         fragment="loading"
         href="#"
         class="list-group-item"
-        *ngFor="let server of servers">
-          {{ server.name }}
+        *ngFor="let server of servers"
+      >
+        {{ server.name }}
       </a>
     </div>
   </div>
@@ -24,6 +25,15 @@
     <button class="btn btn-primary" (click)="onRefresh()">Refresh</button>
     <br />
     <a routerLink="/users">Go to Users</a>
+    <button class="btn btn-primary" (click)="onLoadUsers(1)">
+      Load Users 1
+    </button>
+
+    <!-- 
+      Usar los params y fragmentos de consulta tanto en el enfoque
+      de enrutamiento programático, llamándolo desde 
+      typscript o el routerLink
+     -->
     <app-edit-server></app-edit-server>
     <hr />
     <app-server></app-server>
