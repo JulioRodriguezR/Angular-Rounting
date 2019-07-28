@@ -18,28 +18,26 @@
     </div>
   </div>
   <div class="col-xs-12 col-sm-4">
+    <!-- 
+      Enlace que se utilizará en todas las rutas secundarias de la ruta
+      que se carga en los servidores 
+    -->
+    <router-outlet></router-outlet>
     <!--
       Añadir ruta absoluta  (navega a localhost:4200 servers)
       no ha ruta relativa (intenta ir a /serversServers)
     -->
-    <button class="btn btn-primary" (click)="onRefresh()">Refresh</button>
+    <!-- <button class="btn btn-primary" (click)="onRefresh()">Refresh</button>
     <br />
     <a routerLink="/users">Go to Users</a>
     <button class="btn btn-primary" (click)="onLoadUsers(1)">
       Load Users 1
-    </button>
-
+    </button> -->
     <!-- 
-      Usar los params y fragmentos de consulta tanto en el enfoque
+      Usar los params y fragmentos de consulta en el enfoque
       de enrutamiento programático, llamándolo desde 
       typscript o el routerLink
      -->
-    <app-edit-server></app-edit-server>
-    <hr />
-    <!-- 
-      Enrutamiento anidado, cargando la ruta dinámicamente junto al
-      menu de elección de Servers
-     -->
-    <!-- <app-server></app-server> -->
+    <!-- <app-edit-server></app-edit-server> -->
   </div>
 </div>

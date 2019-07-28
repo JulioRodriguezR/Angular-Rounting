@@ -14,11 +14,21 @@ import { ServersService } from "./servers/servers.service";
 
 const appRoutes: Routes = [
   { path: "", component: HomeComponent }, // localhost:...
-  { path: "users", component: UserComponent }, // localhost:.../users
-  { path: "users/:id/:name", component: UserComponent }, // Cargar dinámicamente una ruta
-  { path: "servers", component: ServersComponent },
-  { path: "servers/:id", component: ServerComponent }, // Editar un servidor
-  { path: "servers/:id/edit", component: EditServerComponent }
+  {
+    path: "users",
+    component: UserComponent,
+    children: [
+      { path: ":id/:name", component: UserComponent } // Cargar dinámicamente una ruta
+    ]
+  },
+  {
+    path: "servers",
+    component: ServersComponent,
+    children: [
+      { path: ":id", component: ServerComponent },
+      { path: ":id/edit", component: EditServerComponent }
+    ]
+  }
 ];
 @NgModule({
   declarations: [
