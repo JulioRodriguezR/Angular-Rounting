@@ -2,11 +2,11 @@
   <div class="col-xs-12 col-sm-4">
     <div class="list-group">
       <!--
-        + Directiva
+        + Directiva // cargar el componente de edición y servidor único 
         + Propiedad vinculante
       -->
       <a
-        [routerLink]="['/servers', 5, 'edit']"
+        [routerLink]="['/servers', server.id]"
         [queryParams]="{ allowEdit: '1' }"
         fragment="loading"
         href="#"
@@ -36,6 +36,10 @@
      -->
     <app-edit-server></app-edit-server>
     <hr />
-    <app-server></app-server>
+    <!-- 
+      Enrutamiento anidado, cargando la ruta dinámicamente junto al
+      menu de elección de Servers
+     -->
+    <!-- <app-server></app-server> -->
   </div>
 </div>
