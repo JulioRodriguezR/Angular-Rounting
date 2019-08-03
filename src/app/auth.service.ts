@@ -2,7 +2,7 @@ export class AuthService {
   loggedIn = false;
 
   /**
-   * Verificar el estado
+   * Verificación del estado.
    *
    * @memberof AuthService
    */
@@ -15,7 +15,6 @@ export class AuthService {
         resolve(this.loggedIn);
       }, 800);
     });
-
     return promise;
   }
 
