@@ -5,9 +5,13 @@ import {
   RouterStateSnapshot
 } from "@angular/router";
 
+/**
+ * Permitiendo al enrutador que pueda ejecutar el método
+ * & Asegurando que el componente lo tenga
+ * @export
+ * @interface CanComponentDeactivate
+ */
 export interface CanComponentDeactivate {
-  // Permitiendo al enrutador pueda ejecutar el método
-  // Asegurando que el componente lo tenga
   canDeactivate: () => Observable<boolean> | Promise<boolean> | boolean;
 }
 
