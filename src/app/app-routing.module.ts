@@ -1,7 +1,7 @@
 import { NgModule } from "@angular/core";
 import { Routes, RouterModule } from "@angular/router";
 
-import { ErrorPageComponent } from "./components/error-page/error-page.component";
+import { ErrorPageComponent } from "./alerts/error-page/error-page.component";
 import { AuthGuardService } from "./auth-guard.service";
 import { HomeComponent } from "./pages/home/home.component";
 import { UserComponent } from "./pages/users/user/user.component";
