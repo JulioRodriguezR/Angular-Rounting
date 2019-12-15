@@ -24,8 +24,6 @@ export class EditServerComponent implements OnInit, CanComponentDeactivate {
   ) {}
 
   ngOnInit() {
-    console.log(this.route.snapshot.queryParams);
-    console.log(this.route.snapshot.fragment);
     // Bajo un enfoque de programación reactiva,
     // reaccionar a los params de consulta modificados
     this.route.queryParams

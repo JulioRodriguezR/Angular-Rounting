@@ -1,18 +1,18 @@
 import { NgModule } from "@angular/core";
 import { Routes, RouterModule } from "@angular/router";
 
-import { HomeComponent } from "./home/home.component";
-import { UserComponent } from "./users/user/user.component";
-import { ServersComponent } from "./servers/servers.component";
-import { ServerComponent } from "./servers/server/server.component";
-import { EditServerComponent } from "./servers/edit-server/edit-server.component";
+import { ErrorPageComponent } from "./components/error-page/error-page.component";
 import { AuthGuardService } from "./auth-guard.service";
-import { CanDeactivateGuardService } from "./servers/edit-server/can-deactivate-guard.service";
-import { ErrorPageComponent } from "./error-page/error-page.component";
-import { ServerResolverService } from "./servers/server/server-resolver.service";
+import { HomeComponent } from "./pages/home/home.component";
+import { UserComponent } from "./pages/users/user/user.component";
+import { ServersComponent } from "./pages/servers/servers.component";
+import { ServerComponent } from "./pages/servers/server/server.component";
+import { EditServerComponent } from "./pages/servers/edit-server/edit-server.component";
+import { CanDeactivateGuardService } from "./pages/servers/edit-server/can-deactivate-guard.service";
+import { ServerResolverService } from "./pages/servers/server/server-resolver.service";
 
 const appRoutes: Routes = [
-  { path: "", component: HomeComponent }, // localhost:...
+  { path: "", component: HomeComponent },
   {
     path: "users",
     component: UserComponent,
@@ -39,11 +39,15 @@ const appRoutes: Routes = [
     ]
   },
   {
+    path: 'posts',
+    loadChildren: './pages/posts/posts.module#PostsModule'
+  },
+  {
     path: "not-found",
     component: ErrorPageComponent,
     data: { message: "Page not found!" }
   },
-  { path: "**", redirectTo: "/not-found" } // Reedireccion
+  { path: "**", redirectTo: "/not-found" }
 ];
 @NgModule({
   imports: [RouterModule.forRoot(appRoutes)],
