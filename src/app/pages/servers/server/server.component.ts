@@ -1,12 +1,12 @@
-import { Component, OnInit } from "@angular/core";
+import { Component, OnInit } from '@angular/core';
 
-import { ServersService } from "../servers.service";
-import { ActivatedRoute, Params, Router, Data } from "@angular/router";
+import { ServersService } from '../servers.service';
+import { ActivatedRoute, Params, Router, Data } from '@angular/router';
 
 @Component({
-  selector: "app-server",
-  templateUrl: "./server.component.html",
-  styleUrls: ["./server.component.css"]
+  selector: 'app-server',
+  templateUrl: './server.component.html',
+  styleUrls: ['./server.component.css']
 })
 export class ServerComponent implements OnInit {
   server: { id: number; name: string; status: string };
@@ -19,7 +19,7 @@ export class ServerComponent implements OnInit {
 
   ngOnInit() {
     this.route.data.subscribe((data: Data) => {
-      this.server = data["server"];
+      this.server = data['server'];
     });
     // // Obtener la instantania del id
     // const id = +this.route.snapshot.params["id"]; // Asegurar que es de tipo num
@@ -31,9 +31,9 @@ export class ServerComponent implements OnInit {
   }
 
   onEdit() {
-    this.router.navigate(["edit"], {
+    this.router.navigate(['edit'], {
       relativeTo: this.route,
-      queryParamsHandling: "preserve" // Sobreescribe el comportamiento predeterminado, manteniendo el viejo
+      queryParamsHandling: 'preserve' // Sobreescribe el comportamiento predeterminado, manteniendo el viejo
     });
   }
 }

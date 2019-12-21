@@ -1,15 +1,15 @@
-import { Injectable } from "@angular/core";
+import { Injectable } from '@angular/core';
 import {
   CanActivate,
   ActivatedRouteSnapshot,
   RouterStateSnapshot,
   Router,
   CanActivateChild
-} from "@angular/router";
+} from '@angular/router';
 
-import { Observable } from "rxjs/Observable";
+import { Observable } from 'rxjs/Observable';
 
-import { AuthService } from "./auth.service";
+import { AuthService } from './auth.service';
 
 /**
  * Protección de ruta.
@@ -20,7 +20,7 @@ import { AuthService } from "./auth.service";
  * @implements {CanActivate}
  */
 @Injectable({
-  providedIn: "root"
+  providedIn: 'root'
 })
 export class AuthGuardService implements CanActivate, CanActivateChild {
   constructor(private authService: AuthService, private router: Router) {}
@@ -36,9 +36,9 @@ export class AuthGuardService implements CanActivate, CanActivateChild {
     route: ActivatedRouteSnapshot,
     state: RouterStateSnapshot
   ): Observable<boolean> | Promise<boolean> | boolean {
-    /* 
+    /*
         canActivate puede ejecutarse de forma asíncrona o sincrónicamente.
-        
+
         Puede haber guardias sobre un código ejecutado en el cliente (sincrónicamente)
         o es posible que tenga algún código que tarde unos segundos en finalizar, bien
         porque usas un tiempo de espera allí o porque te comuniques con un servidor   
@@ -51,7 +51,7 @@ export class AuthGuardService implements CanActivate, CanActivateChild {
         } else {
           // Cancelación de la navegación
           // Hacer volver a la pag. raíz
-          this.router.navigate(["/"]);
+          this.router.navigate(['/']);
         }
       }
     );
