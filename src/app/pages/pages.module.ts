@@ -1,6 +1,6 @@
 import { NgModule } from '@angular/core';
 
-import { AuthGuardService } from '../auth-guard.service';
+import { AuthGuardService } from '../services/auth-guard.service';
 import { HomeComponent } from './home/home.component';
 import { UserComponent } from './users/user/user.component';
 import { ServersComponent } from './servers/servers.component';
@@ -36,7 +36,6 @@ import { ErrorPageComponent } from '../components/alerts/error-page/error-page.c
     PostsComponent,
     ErrorPageComponent,
     AuthGuardService
-  ],
-  imports: []
+  ]
 })
 export class PagesModule { }

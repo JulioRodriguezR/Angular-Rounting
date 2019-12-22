@@ -1,7 +1,6 @@
 import { NgModule } from '@angular/core';
 import { Routes, RouterModule } from '@angular/router';
 
-import { AuthGuardService } from './auth-guard.service';
 import { HomeComponent } from 'src/app/pages/home/home.component';
 import { UserComponent } from 'src/app/pages/users/user/user.component';
 import { ServersComponent } from 'src/app/pages/servers/servers.component';
@@ -10,6 +9,7 @@ import { EditServerComponent } from 'src/app/pages/servers/edit-server/edit-serv
 import { CanDeactivateGuardService } from 'src/app/pages/servers/edit-server/can-deactivate-guard.service';
 import { ServerResolverService } from 'src/app/pages/servers/server/server-resolver.service';
 import { ErrorPageComponent } from './components/alerts/error-page/error-page.component';
+import { AuthGuardService } from './services/auth-guard.service';
 
 const appRoutes: Routes = [
   { path: '', component: HomeComponent },
