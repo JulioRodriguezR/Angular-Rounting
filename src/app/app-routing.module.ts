@@ -1,7 +1,6 @@
 import { NgModule } from '@angular/core';
 import { Routes, RouterModule } from '@angular/router';
 
-import { ErrorPageComponent } from 'src/app/components/error-page/error-page.component';
 import { AuthGuardService } from './auth-guard.service';
 import { HomeComponent } from 'src/app/pages/home/home.component';
 import { UserComponent } from 'src/app/pages/users/user/user.component';
@@ -10,6 +9,7 @@ import { ServerComponent } from 'src/app/pages/servers/server/server.component';
 import { EditServerComponent } from 'src/app/pages/servers/edit-server/edit-server.component';
 import { CanDeactivateGuardService } from 'src/app/pages/servers/edit-server/can-deactivate-guard.service';
 import { ServerResolverService } from 'src/app/pages/servers/server/server-resolver.service';
+import { ErrorPageComponent } from './components/alerts/error-page/error-page.component';
 
 const appRoutes: Routes = [
   { path: '', component: HomeComponent },
@@ -46,8 +46,7 @@ const appRoutes: Routes = [
     path: 'not-found',
     component: ErrorPageComponent,
     data: { message: 'Page not found!' }
-  },
-  { path: '**', redirectTo: '/not-found' }
+  }
 ];
 @NgModule({
   imports: [RouterModule.forRoot(appRoutes)],

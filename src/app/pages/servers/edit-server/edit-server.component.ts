@@ -1,19 +1,19 @@
-import { Component, OnInit } from "@angular/core";
-import { ActivatedRoute, Params, Router } from "@angular/router";
-import { CanComponentDeactivate } from "./can-deactivate-guard.service";
+import { Component, OnInit } from '@angular/core';
+import { ActivatedRoute, Params, Router } from '@angular/router';
+import { CanComponentDeactivate } from './can-deactivate-guard.service';
 
-import { ServersService } from "../servers.service";
-import { Observable } from "rxjs/Observable";
+import { ServersService } from '../servers.service';
+import { Observable } from 'rxjs/Observable';
 
 @Component({
-  selector: "app-edit-server",
-  templateUrl: "./edit-server.component.html",
-  styleUrls: ["./edit-server.component.css"]
+  selector: 'app-edit-server',
+  templateUrl: './edit-server.component.html',
+  styleUrls: ['./edit-server.component.css']
 })
 export class EditServerComponent implements OnInit, CanComponentDeactivate {
   server: { id: number; name: string; status: string };
-  serverName = "";
-  serverStatus = "";
+  serverName = '';
+  serverStatus = '';
   allowEdit = false;
   changesSaves = false;
 
@@ -29,11 +29,11 @@ export class EditServerComponent implements OnInit, CanComponentDeactivate {
     this.route.queryParams
       // Comprobar si esta permitido editar el servidor
       .subscribe((queryParams: Params) => {
-        this.allowEdit = queryParams["allowEdit"] === "1" ? true : false; // Método de cambios guardados
+        this.allowEdit = queryParams['allowEdit'] === '1' ? true : false; // Método de cambios guardados
         // Info sobre si se ha hecho click en actualizar
       });
     this.route.fragment.subscribe();
-    const id = +this.route.snapshot.params["id"]; // id real
+    const id = +this.route.snapshot.params['id']; // id real
     this.server = this.serversService.getServer(id);
     // Subscribirse a los params de ruta para actualizar la id si cambian los params
     this.serverName = this.server.name;
@@ -50,7 +50,7 @@ export class EditServerComponent implements OnInit, CanComponentDeactivate {
     this.changesSaves = true;
     // Asc un nivel al último servidor cargado
     // en relación con la ruta activa
-    this.router.navigate(["../"], { relativeTo: this.route });
+    this.router.navigate(['../'], { relativeTo: this.route });
   }
 
   /**
@@ -65,11 +65,11 @@ export class EditServerComponent implements OnInit, CanComponentDeactivate {
     }
     // Tomar nombre del enlace bidireccional a las entradas del usuario
     if (
-      (this.serverName != this.server.name ||
-        this.serverStatus != this.server.status) &&
+      (this.serverName !== this.server.name ||
+        this.serverStatus !== this.server.status) &&
       !this.changesSaves
     ) {
-      return confirm("Do you want to discart the changes?");
+      return confirm('Do you want to discart the changes?');
     } else {
       return true;
     }

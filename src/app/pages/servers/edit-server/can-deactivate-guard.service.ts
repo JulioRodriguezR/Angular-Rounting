@@ -1,9 +1,9 @@
-import { Observable } from "rxjs/Observable";
+import { Observable } from 'rxjs/Observable';
 import {
   CanDeactivate,
   ActivatedRouteSnapshot,
   RouterStateSnapshot
-} from "@angular/router";
+} from '@angular/router';
 
 /**
  * Permitiendo al enrutador que pueda ejecutar el método

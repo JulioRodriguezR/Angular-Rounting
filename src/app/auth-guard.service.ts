@@ -41,7 +41,7 @@ export class AuthGuardService implements CanActivate, CanActivateChild {
 
         Puede haber guardias sobre un código ejecutado en el cliente (sincrónicamente)
         o es posible que tenga algún código que tarde unos segundos en finalizar, bien
-        porque usas un tiempo de espera allí o porque te comuniques con un servidor   
+        porque usas un tiempo de espera allí o porque te comuniques con un servidor
       */
     return this.authService.isAuthenticated().then(
       // Retorna una Promesa
