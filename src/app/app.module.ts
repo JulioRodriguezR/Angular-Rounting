@@ -5,7 +5,7 @@ import { FormsModule } from '@angular/forms';
 import { AppRoutingModule } from './app-routing.module';
 import { AuthService } from './auth.service';
 import { AppComponent } from './app.component';
-import { ErrorPageComponent } from './alerts/error-page/error-page.component';
+import { ErrorPageComponent } from './components/error-page/error-page.component';
 import { PageNotFoundComponent } from './alerts/page-not-found/page-not-found.component';
 import { HomeComponent } from './pages/home/home.component';
 import { UsersComponent } from './pages/users/users.component';

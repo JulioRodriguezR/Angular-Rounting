@@ -1,11 +1,10 @@
 import { NgModule } from '@angular/core';
 import { Routes, RouterModule } from '@angular/router';
 
-import { ErrorPageComponent } from 'src/app/alerts/error-page/error-page.component';
+import { ErrorPageComponent } from 'src/app/components/error-page/error-page.component';
 import { AuthGuardService } from './auth-guard.service';
 import { HomeComponent } from 'src/app/pages/home/home.component';
 import { UserComponent } from 'src/app/pages/users/user/user.component';
-import { UsersComponent } from 'src/app/pages/users/users.component';
 import { ServersComponent } from 'src/app/pages/servers/servers.component';
 import { ServerComponent } from 'src/app/pages/servers/server/server.component';
 import { EditServerComponent } from 'src/app/pages/servers/edit-server/edit-server.component';
