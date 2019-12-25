@@ -14,7 +14,6 @@ export class ServersComponent implements OnInit {
   constructor(
     private serversService: ServersService,
     private router: Router,
-    // Inyectar la rutas actualmente activas
     private route: ActivatedRoute
   ) {}
 
@@ -24,6 +23,7 @@ export class ServersComponent implements OnInit {
 
   onRefresh() {
     // this.router.navigate(['/servers'], {relativeTo: this.route});
+
     // Indiferentemente como ruta absoluta o relativa.
     // A diferencia de routerLink navigate no sabe en que ruta se encuentra actualmente
   }

@@ -2,6 +2,7 @@ import { ActivatedRoute, Params } from '@angular/router';
 import { Component, OnInit, OnDestroy } from '@angular/core';
 import { Subscription } from 'rxjs';
 
+
 @Component({
   selector: 'app-user',
   templateUrl: './user.component.html',
@@ -11,9 +12,7 @@ export class UserComponent implements OnInit, OnDestroy {
   user: {id: number, name: string};
   paramsSubcription: Subscription;
 
-  constructor(private route: ActivatedRoute) {
-    // ActivatedRoute puede tener acceso al usuario seleccionado
-   }
+  constructor(private route: ActivatedRoute) { }
 
   ngOnInit() {
     this.user = {
