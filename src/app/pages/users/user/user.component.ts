@@ -39,7 +39,6 @@ export class UserComponent implements OnInit, OnDestroy {
   }
 
   ngOnDestroy(): void {
-    // Darte de baja manualmente.
     this.paramsSubcription.unsubscribe;
   }
 

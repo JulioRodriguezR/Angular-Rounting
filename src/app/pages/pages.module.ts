@@ -10,6 +10,7 @@ import { CanDeactivateGuardService } from 'src/app/pages/servers/edit-server/can
 import { ServerResolverService } from 'src/app/pages/servers/server/server-resolver.service';
 import { PostsComponent } from './posts/posts.component';
 import { ErrorPageComponent } from '../components/alerts/error-page/error-page.component';
+import { CommonModule } from '@angular/common';
 
 
 @NgModule({
@@ -18,24 +19,23 @@ import { ErrorPageComponent } from '../components/alerts/error-page/error-page.c
     UserComponent,
     ServersComponent,
     ServerComponent,
-    ServerResolverService,
     EditServerComponent,
-    CanDeactivateGuardService,
     PostsComponent,
     ErrorPageComponent,
-    AuthGuardService
   ],
   exports: [
     HomeComponent,
     UserComponent,
     ServersComponent,
     ServerComponent,
-    ServerResolverService,
     EditServerComponent,
-    CanDeactivateGuardService,
     PostsComponent,
     ErrorPageComponent,
-    AuthGuardService
+    // AuthGuardService
+  ],
+  providers: [
+    AuthGuardService,
+    CanDeactivateGuardService,
   ]
 })
 export class PagesModule { }
