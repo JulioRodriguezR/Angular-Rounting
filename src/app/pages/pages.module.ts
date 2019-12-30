@@ -1,6 +1,7 @@
 import { NgModule } from '@angular/core';
 import { RouterModule } from '@angular/router';
 import { FormsModule, ReactiveFormsModule } from '@angular/forms';
+import { HttpClientModule } from '@angular/common/http';
 
 import { AuthGuardService } from '../services/auth-guard.service';
 import { HomeComponent } from './home/home.component';
@@ -34,6 +35,7 @@ import { CommonModule } from '@angular/common';
   imports: [
     RouterModule,
     CommonModule,
+    // HttpClientModule,
     FormsModule,
     ReactiveFormsModule
   ],
