@@ -1,5 +1,6 @@
 import { NgModule } from '@angular/core';
 import { RouterModule } from '@angular/router';
+import { FormsModule, ReactiveFormsModule } from '@angular/forms';
 
 import { AuthGuardService } from '../services/auth-guard.service';
 import { HomeComponent } from './home/home.component';
@@ -9,7 +10,6 @@ import { ServerComponent } from './servers/server/server.component';
 import { EditServerComponent } from 'src/app/pages/servers/edit-server/edit-server.component';
 import { CanDeactivateGuardService } from 'src/app/pages/servers/edit-server/can-deactivate-guard.service';
 import { ServerResolverService } from 'src/app/pages/servers/server/server-resolver.service';
-import { PostsComponent } from './posts/posts.component';
 import { ErrorPageComponent } from '../components/alerts/error-page/error-page.component';
 import { CommonModule } from '@angular/common';
 
@@ -21,7 +21,6 @@ import { CommonModule } from '@angular/common';
     ServersComponent,
     ServerComponent,
     EditServerComponent,
-    PostsComponent,
     ErrorPageComponent,
   ],
   exports: [
@@ -30,12 +29,13 @@ import { CommonModule } from '@angular/common';
     ServersComponent,
     ServerComponent,
     EditServerComponent,
-    PostsComponent,
     ErrorPageComponent
   ],
   imports: [
     RouterModule,
-    CommonModule
+    CommonModule,
+    FormsModule,
+    ReactiveFormsModule
   ],
   providers: [
     AuthGuardService,

@@ -30,7 +30,6 @@ export class EditServerComponent implements OnInit, CanComponentDeactivate {
       // Comprobar si esta permitido editar el servidor
       .subscribe((queryParams: Params) => {
         this.allowEdit = queryParams['allowEdit'] === '1' ? true : false; // Método de cambios guardados
-        // Info sobre si se ha hecho click en actualizar
       });
     this.route.fragment.subscribe();
     const id = +this.route.snapshot.params['id']; // id real
@@ -42,11 +41,9 @@ export class EditServerComponent implements OnInit, CanComponentDeactivate {
 
   onUpdateServer() {
     this.serversService.updateServer(this.server.id, {
-      // Datos del servidor cargado
       name: this.serverName,
       status: this.serverStatus
     });
-    // Cambiar valor propiedad en cada actualización
     this.changesSaves = true;
     // Asc un nivel al último servidor cargado
     // en relación con la ruta activa

@@ -1,7 +1,7 @@
 <h1>Posts</h1>
 <ul class="list-group">
     <li *ngFor="let indexMsn of msnsPosts | async" class="list-group-item">
-        <h2>{{ indexPost.title }}</h2>
-        <p>{{ indexPost.body }}</p>
+        <h2>{{ indexMsn.title }}</h2>
+        <p>{{ indexMsn.body }}</p>
     </li>
 </ul>

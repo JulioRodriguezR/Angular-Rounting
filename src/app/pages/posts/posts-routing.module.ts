@@ -19,7 +19,6 @@ export class PostsRoutingModule { }
 
 
 /*
-* Todo el modulo,
-* con su definición de la ruta y definición del componente se carga de manera perezosa.
-*
+* Todo el modulo,con su definición de la ruta y definición del componente
+* se carga de manera perezosa.
 */
