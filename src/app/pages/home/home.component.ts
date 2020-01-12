@@ -10,12 +10,12 @@ import { AuthService } from 'src/app/services/auth.service';
   styleUrls: ['./home.component.css']
 })
 export class HomeComponent implements OnInit {
-  constructor(private router: Router, private authService: AuthService) {}
+  constructor(private router: Router, private authService: AuthService) { }
 
-  ngOnInit() {}
+  ngOnInit() { }
 
   /**
-   * Navegar al componente servidores
+   * Navigate to the servers component
    *
    * @memberof HomeComponent
    */
@@ -27,7 +27,6 @@ export class HomeComponent implements OnInit {
   }
 
   onLogin() {
-    // Comunicarse con el servicio de autentificación
     this.authService.logIn();
   }
 

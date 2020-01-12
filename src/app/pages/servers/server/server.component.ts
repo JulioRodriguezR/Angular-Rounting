@@ -15,7 +15,7 @@ export class ServerComponent implements OnInit {
     private serversService: ServersService,
     private route: ActivatedRoute,
     private router: Router
-  ) {}
+  ) { }
 
   ngOnInit() {
     this.route.data.subscribe((data: Data) => {
@@ -33,7 +33,7 @@ export class ServerComponent implements OnInit {
   onEdit() {
     this.router.navigate(['edit'], {
       relativeTo: this.route,
-      queryParamsHandling: 'preserve' // Sobreescribe el comportamiento predeterminado, manteniendo el viejo
+      queryParamsHandling: 'preserve'
     });
   }
 }

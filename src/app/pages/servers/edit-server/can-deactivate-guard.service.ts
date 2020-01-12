@@ -6,8 +6,9 @@ import {
 } from '@angular/router';
 
 /**
- * Permitiendo al enrutador que pueda ejecutar el método
- * & Asegurando que el componente lo tenga
+ * Allowing the router to execute the method,
+ * ensuring that the component has it.
+ * 
  * @export
  * @interface CanComponentDeactivate
  */
@@ -21,10 +22,10 @@ export class CanDeactivateGuardService
     component: CanComponentDeactivate,
     currentRoute: ActivatedRouteSnapshot,
     currentState: RouterStateSnapshot,
-    // Llamándose al final... cuando se deja la ruta
-    nextState?: RouterStateSnapshot // Arg opcional (?)
+    // Calling at the end ... when the route is left
+    nextState?: RouterStateSnapshot
   ): Observable<boolean> | Promise<boolean> | boolean {
-    // Llamar al componente actual
+    // Call the current component
     return component.canDeactivate();
   }
 }

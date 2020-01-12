@@ -1,9 +1,9 @@
 <p>User with ID {{ user.id }} loaded.</p>
 <p>User name is {{ user.name }}</p>
-<hr>
+<hr />
 <a [routerLink]="['/users', 2, 'Anna']">Load Ana (2)</a>
 <!--
-  Angular no crea una instancia del componente,
-  reduciendo costos de memoria. Para reaccionar a los cambios posteriores
-  se tiene que observar los param
+  Angular does not create an instance of the component,
+  reducing memory costs. To react to subsequent changes, 
+  the param must be observed.
  -->

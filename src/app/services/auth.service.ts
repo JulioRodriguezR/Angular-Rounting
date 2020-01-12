@@ -8,16 +8,14 @@ export class AuthService {
   loggedIn = false;
 
   /**
-   * Verificación del estado.
+   * Check state.
    *
    * @memberof AuthService
    */
   isAuthenticated() {
-    // Simular una demora de tiempo, acercándonos al servidor.
+    // Simulate a delay of time, approaching the server.
     const promise = new Promise((resolve, reject) => {
-      // Espera
       setTimeout(() => {
-        // Resolver la promesa
         resolve(this.loggedIn);
       }, 800);
     });

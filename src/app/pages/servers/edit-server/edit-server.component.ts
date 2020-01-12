@@ -20,21 +20,17 @@ export class EditServerComponent implements OnInit, CanComponentDeactivate {
   constructor(
     private serversService: ServersService,
     private route: ActivatedRoute,
-    private router: Router // quiero navegar...
-  ) {}
+    private router: Router
+  ) { }
 
   ngOnInit() {
-    // Bajo un enfoque de programación reactiva,
-    // reaccionar a los params de consulta modificados
     this.route.queryParams
-      // Comprobar si esta permitido editar el servidor
       .subscribe((queryParams: Params) => {
-        this.allowEdit = queryParams['allowEdit'] === '1' ? true : false; // Método de cambios guardados
+        this.allowEdit = queryParams['allowEdit'] === '1' ? true : false;
       });
     this.route.fragment.subscribe();
-    const id = +this.route.snapshot.params['id']; // id real
+    const id = +this.route.snapshot.params['id'];
     this.server = this.serversService.getServer(id);
-    // Subscribirse a los params de ruta para actualizar la id si cambian los params
     this.serverName = this.server.name;
     this.serverStatus = this.server.status;
   }
@@ -45,22 +41,19 @@ export class EditServerComponent implements OnInit, CanComponentDeactivate {
       status: this.serverStatus
     });
     this.changesSaves = true;
-    // Asc un nivel al último servidor cargado
-    // en relación con la ruta activa
     this.router.navigate(['../'], { relativeTo: this.route });
   }
 
   /**
-   * Aplicar siempre que el enrutador compruebe el servicio.
+   * Apply whenever the router checks the service.
    *
    * @memberof EditServerComponent
    */
   canDeactivate(): Observable<boolean> | Promise<boolean> | boolean {
-    // Comprobar posibilidad de edicción
     if (!this.allowEdit) {
       return true;
     }
-    // Tomar nombre del enlace bidireccional a las entradas del usuario
+    // Take the name of the bidirectional link to user inputs
     if (
       (this.serverName !== this.server.name ||
         this.serverStatus !== this.server.status) &&

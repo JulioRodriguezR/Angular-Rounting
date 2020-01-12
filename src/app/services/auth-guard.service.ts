@@ -12,18 +12,17 @@ import { Observable } from 'rxjs/Observable';
 import { AuthService } from './auth.service';
 
 /**
- * Protección de ruta.
- * Angular debe ejecutar este código antes de cargar una ruta.
+ * Route protection.
  *
  * @export
  * @class AuthGuardService
- * @implements {CanActivate}
+ * @implements {CanActivate} can be executed asynchronously or synchronously.
  */
 @Injectable({
   providedIn: 'root'
 })
 export class AuthGuardService implements CanActivate, CanActivateChild {
-  constructor(private authService: AuthService, private router: Router) {}
+  constructor(private authService: AuthService, private router: Router) { }
 
   canActivateChild(
     route: ActivatedRouteSnapshot,
@@ -36,21 +35,11 @@ export class AuthGuardService implements CanActivate, CanActivateChild {
     route: ActivatedRouteSnapshot,
     state: RouterStateSnapshot
   ): Observable<boolean> | Promise<boolean> | boolean {
-    /*
-        canActivate puede ejecutarse de forma asíncrona o sincrónicamente.
-
-        Puede haber guardias sobre un código ejecutado en el cliente (sincrónicamente)
-        o es posible que tenga algún código que tarde unos segundos en finalizar, bien
-        porque usas un tiempo de espera allí o porque te comuniques con un servidor
-      */
     return this.authService.isAuthenticated().then(
-      // Retorna una Promesa
       (authenticated: boolean) => {
         if (authenticated) {
           return true;
         } else {
-          // Cancelación de la navegación
-          // Hacer volver a la pag. raíz
           this.router.navigate(['/']);
         }
       }
